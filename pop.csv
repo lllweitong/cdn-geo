@@ -1,0 +1,460 @@
+pop,iata,city,country,iso,latitude,longitude
+hkg,HKG,Hong Kong,Hong Kong,HK,22.3089,113.915
+ord,ORD,Chicago,United States,US,41.9786,-87.9047
+fra,FRA,Frankfurt,Germany,DE,50.0333,8.57056
+mrs,MRS,Marseille,France,FR,43.4393,5.22142
+sof,SOF,Sofia,Bulgaria,BG,42.6967,23.4114
+dus,DUS,Duesseldorf,Germany,DE,51.2895,6.76678
+jnb,JNB,Johannesburg,South Africa,ZA,-26.1392,28.246
+isu,ISU,Sulaymaniyah,Iraq,IQ,35.5617,45.3167
+tpe,TPE,Taipei,Taiwan,TW,25.0777,121.233
+yyz,YYZ,Toronto,Canada,CA,43.6797,-79.6227
+mad,MAD,Madrid,Spain,ES,40.4719,-3.56264
+dme,DME,Moscow,Russia,,55.4102,37.902
+tpa,TPA,Tampa,United States,US,27.9755,-82.5332
+ams,AMS,Amsterdam,Netherlands,NL,52.3086,4.76389
+sjc,SJC,San Jose,United States,US,37.3626,-121.929
+syd,SYD,Sydney,Australia,AU,-33.9461,151.177
+mao,MAO,Manaus,Brazil,BR,-3.03861,-60.0497
+gru,GRU,Sao Paulo,Brazil,BR,-23.4322,-46.4692
+lim,LIM,Lima,Peru,PE,-12.0219,-77.1143
+lim,LIM,Lima,Peru,PE,-12.0219,-77.1143
+iad,IAD,Washington,United States,US,38.9445,-77.4558
+waw,WAW,Warsaw,Poland,PL,52.1657,20.9671
+atl,ATL,Atlanta,United States,US,33.6367,-84.4281
+kul,KUL,Kuala Lumpur,Malaysia,MY,2.74558,101.71
+scl,SCL,Santiago,Chile,CL,-33.3928,-70.7856
+sof,SOF,Sofia,Bulgaria,BG,42.6967,23.4114
+akl,AKL,Auckland,New Zealand,NZ,-37.0081,174.792
+akx,AKX,Aktyubinsk,Kazakhstan,KZ,50.2458,57.2067
+sin,SIN,Singapore,Singapore,SG,1.35019,103.994
+lax,LAX,Los Angeles,United States,US,33.9425,-118.408
+sea,SEA,Seattle,United States,US,47.449,-122.309
+dfw,DFW,Dallas-Fort Worth,United States,US,32.8968,-97.038
+lhr,LHR,London,United Kingdom,GB,51.4775,-0.461389
+kbp,KBP,Kiev,Ukraine,UA,50.345,30.8947
+fco,FCO,Rome,Italy,IT,41.8003,12.2389
+cdg,CDG,Paris,France,FR,49.0097,2.54778
+ruh,RUH,Riyadh,Saudi Arabia,SA,24.9576,46.6988
+arn,ARN,Stockholm,Sweden,SE,59.6519,17.9186
+maa,MAA,Madras,India,IN,12.99,80.1693
+bom,BOM,Mumbai,India,IN,19.0887,72.8679
+lis,LIS,Lisbon,Portugal,PT,38.7813,-9.13592
+del,DEL,Delhi,India,IN,28.5665,77.1031
+prg,PRG,Prague,Czech Republic,CZ,50.1008,14.26
+mxp,MXP,Milano,Italy,IT,45.6306,8.72811
+vno,VNO,Vilnius,Lithuania,LT,54.6341,25.2858
+nrt,NRT,Tokyo,Japan,JP,35.7653,140.386
+ewr,EWR,Newark,United States,US,40.6925,-74.1686
+den,DEN,Denver,United States,US,39.8617,-104.673
+cgb,CGB,Cuiaba,Brazil,BR,-15.6529,-56.1167
+icn,ICN,Seoul,South Korea,KR,37.4633,126.44
+bkk,BKK,Bangkok,Thailand,TH,13.6811,100.747
+ist,IST,Istanbul,Turkey,,41.2753,28.7519
+dtw,DTW,Detroit,United States,US,42.2125,-83.3533
+smf,SMF,Sacramento,United States,US,38.6954,-121.591
+cph,CPH,Copenhagen,Denmark,DK,55.6179,12.656
+for,FOR,Fortaleza,Brazil,BR,-3.77628,-38.5326
+cgk,CGK,Jakarta,Indonesia,ID,-6.12556,106.656
+led,LED,St. Petersburg,Russia,,59.8003,30.2625
+khi,KHI,Karachi,Pakistan,PK,24.9065,67.1608
+aru,ARU,Aracatuba,Brazil,BR,-21.1413,-50.4247
+tlv,TLV,Tel-aviv,Israel,IL,32.0114,34.8867
+tlv,TLV,Tel-aviv,Israel,IL,32.0114,34.8867
+oma,OMA,Omaha,United States,US,41.3032,-95.8941
+mci,MCI,Kansas City,United States,US,39.2976,-94.7139
+pdx,PDX,Portland,United States,US,45.5887,-122.598
+gig,GIG,Rio De Janeiro,Brazil,BR,-22.81,-43.2506
+for,FOR,Fortaleza,Brazil,BR,-3.77628,-38.5326
+ist,IST,Istanbul,Turkey,,41.2753,28.7519
+man,MAN,Manchester,United Kingdom,GB,53.3537,-2.27495
+muc,MUC,Munich,Germany,DE,48.3538,11.7861
+bsb,BSB,Brasilia,Brazil,BR,-15.8692,-47.9208
+dme,DME,Moscow,Russia,,55.4102,37.902
+ala,ALA,Alma-ata,Kazakhstan,KZ,43.3521,77.0405
+ceb,CEB,Cebu,Philippines,PH,10.3075,123.979
+mnl,MNL,Manila,Philippines,PH,14.5086,121.02
+bne,BNE,Brisbane,Australia,AU,-27.3842,153.117
+zrh,ZRH,Zurich,Switzerland,CH,47.4647,8.54917
+gva,GVA,Geneva,Switzerland,CH,46.2381,6.10895
+mel,MEL,Melbourne,Australia,AU,-37.6733,144.843
+per,PER,Perth,Australia,AU,-31.9403,115.967
+adl,ADL,Adelaide,Australia,AU,-34.945,138.531
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+tbs,TBS,Tbilisi,Georgia,GE,41.6692,44.9547
+hel,HEL,Helsinki,Finland,FI,60.3172,24.9633
+zag,ZAG,Zagreb,Croatia,HR,45.7429,16.0688
+dub,DUB,Dublin,Ireland,IE,53.4213,-6.27007
+otp,OTP,Bucharest,Romania,RO,44.5711,26.085
+cgk,CGK,Jakarta,Indonesia,ID,-6.12556,106.656
+mia,MIA,Miami,United States,US,25.7932,-80.2906
+ham,HAM,Hamburg,Germany,DE,53.6304,9.98823
+gye,GYE,Guayaquil,Ecuador,EC,-2.15742,-79.8836
+aus,AUS,Austin,United States,US,30.1945,-97.6699
+yvr,YVR,Vancouver,Canada,CA,49.1939,-123.184
+las,LAS,Las Vegas,United States,US,36.0801,-115.152
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+lca,LCA,Larnaca,Cyprus,CY,34.8751,33.6249
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+nbo,NBO,Nairobi,Kenya,KE,-1.31924,36.9278
+mba,MBA,Mombasa,Kenya,KE,-4.03483,39.5942
+gig,GIG,Rio De Janeiro,Brazil,BR,-22.81,-43.2506
+gig,GIG,Rio De Janeiro,Brazil,BR,-22.81,-43.2506
+iah,IAH,Houston,United States,US,29.9844,-95.3414
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+eze,EZE,Buenos Aires,Argentina,AR,-34.8222,-58.5358
+los,LOS,Lagos,Nigeria,NG,6.57737,3.32116
+msp,MSP,Minneapolis,United States,US,44.882,-93.2218
+sap,SAP,San Pedro Sula,Honduras,HN,15.4526,-87.9236
+poa,POA,Porto Alegre,Brazil,BR,-29.9944,-51.1714
+cwb,CWB,Curitiba,Brazil,BR,-25.5285,-49.1758
+bos,BOS,Boston,United States,US,42.3643,-71.0052
+clt,CLT,Charlotte,United States,US,35.214,-80.9431
+pit,PIT,Pittsburgh,United States,US,40.4915,-80.2329
+vie,VIE,Vienna,Austria,AT,48.1103,16.5697
+lux,LUX,Luxemburg,Luxembourg,LU,49.6233,6.20444
+lun,LUN,Lusaka,Zambia,ZM,-15.3308,28.4526
+ruh,RUH,Riyadh,Saudi Arabia,SA,24.9576,46.6988
+mct,MCT,Muscat,Oman,OM,23.5933,58.2844
+tll,TLL,Tallinn-ulemiste International,Estonia,EE,59.4133,24.8328
+lad,LAD,Luanda,Angola,AO,-8.85837,13.2312
+eze,EZE,Buenos Aires,Argentina,AR,-34.8222,-58.5358
+mnl,MNL,Manila,Philippines,PH,14.5086,121.02
+bog,BOG,Bogota,Colombia,CO,4.70159,-74.1469
+rix,RIX,Riga,Latvia,LV,56.9236,23.9711
+kix,KIX,Osaka,Japan,JP,34.4305,135.23
+nrt,NRT,Tokyo,Japan,JP,35.7653,140.386
+slc,SLC,Salt Lake City,United States,US,40.7884,-111.978
+bcn,BCN,Barcelona,Spain,ES,41.2971,2.07846
+txl,TXL,Berlin,Germany,DE,52.5597,13.2877
+yul,YUL,Montreal,Canada,CA,45.4657,-73.7455
+ric,RIC,Richmond,United States,US,37.5052,-77.3197
+stl,STL,St. Louis,United States,US,38.7487,-90.37
+bud,BUD,Budapest,Hungary,HU,47.4298,19.2611
+hyd,HYD,Hyderabad,India,IN,17.2313,78.4299
+blr,BLR,Bangalore,India,IN,13.1979,77.7063
+pnh,PNH,Phnom-penh,Cambodia,KH,11.5466,104.844
+cfc,CFC,Cacador,Brazil,BR,-26.7884,-50.9398
+eze,EZE,Buenos Aires,Argentina,AR,-34.8222,-58.5358
+gbe,GBE,Gaberone,Botswana,BW,-24.5552,25.9182
+gbe,GBE,Gaberone,Botswana,BW,-24.5552,25.9182
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+buf,BUF,Buffalo,United States,US,42.9405,-78.7322
+khi,KHI,Karachi,Pakistan,PK,24.9065,67.1608
+sjp,SJP,Sao Jose Do Rio Preto,Brazil,BR,-20.8166,-49.4065
+lad,LAD,Luanda,Angola,AO,-8.85837,13.2312
+eze,EZE,Buenos Aires,Argentina,AR,-34.8222,-58.5358
+gye,GYE,Guayaquil,Ecuador,EC,-2.15742,-79.8836
+tgu,TGU,Tegucigalpa,Honduras,HN,14.0609,-87.2172
+bkk,BKK,Bangkok,Thailand,TH,13.6811,100.747
+bkk,BKK,Bangkok,Thailand,TH,13.6811,100.747
+kul,KUL,Kuala Lumpur,Malaysia,MY,2.74558,101.71
+bkk,BKK,Bangkok,Thailand,TH,13.6811,100.747
+cmh,CMH,Columbus,United States,US,39.998,-82.8919
+tlv,TLV,Tel-aviv,Israel,IL,32.0114,34.8867
+rec,REC,Recife,Brazil,BR,-8.12649,-34.9236
+fuk,FUK,Fukuoka,Japan,JP,33.5859,130.451
+mba,MBA,Mombasa,Kenya,KE,-4.03483,39.5942
+mfe,MFE,Mcallen,United States,US,26.1758,-98.2386
+ywg,YWG,Winnipeg,Canada,CA,49.91,-97.2399
+hnl,HNL,Honolulu,United States,US,21.3206,-157.924
+xap,XAP,Chapeco,Brazil,BR,-27.1342,-52.6566
+hkg,HKG,Hong Kong,Hong Kong,HK,22.3089,113.915
+bru,BRU,Brussels,Belgium,BE,50.9014,4.48444
+sjo,SJO,San Jose,Costa Rica,CR,9.99386,-84.2088
+cgk,CGK,Jakarta,Indonesia,ID,-6.12556,106.656
+cgk,CGK,Jakarta,Indonesia,ID,-6.12556,106.656
+osl,OSL,Oslo,Norway,NO,60.1939,11.1004
+ath,ATH,Athens,Greece,GR,37.9364,23.9445
+cwb,CWB,Curitiba,Brazil,BR,-25.5285,-49.1758
+bkk,BKK,Bangkok,Thailand,TH,13.6811,100.747
+bkk,BKK,Bangkok,Thailand,TH,13.6811,100.747
+asu,ASU,Asuncion,Paraguay,PY,-25.24,-57.52
+yxe,YXE,Saskatoon,Canada,CA,52.1708,-106.7
+evn,EVN,Yerevan,Armenia,AM,40.1473,44.3959
+evn,EVN,Yerevan,Armenia,AM,40.1473,44.3959
+qro,QRO,Queretaro,Mexico,MX,20.6173,-100.186
+ebl,EBL,Erbil,Iraq,IQ,36.2376,43.9632
+bna,BNA,Nashville,United States,US,36.1245,-86.6782
+gyd,GYD,Baku,Azerbaijan,AZ,40.4675,50.0467
+sju,SJU,San Juan,Puerto Rico,PR,18.4394,-66.0018
+cor,COR,Cordoba,Argentina,AR,-31.3236,-64.208
+vno,VNO,Vilnius,Lithuania,LT,54.6341,25.2858
+lys,LYS,Lyon,France,FR,45.7256,5.08111
+khi,KHI,Karachi,Pakistan,PK,24.9065,67.1608
+gum,GUM,Agana,Guam,GU,13.4834,144.796
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+bsb,BSB,Brasilia,Brazil,BR,-15.8692,-47.9208
+hre,HRE,Harare,Zimbabwe,ZW,-17.9318,31.0928
+ktm,KTM,Kathmandu,Nepal,NP,27.6966,85.3591
+gru,GRU,Sao Paulo,Brazil,BR,-23.4322,-46.4692
+lca,LCA,Larnaca,Cyprus,CY,34.8751,33.6249
+phl,PHL,Philadelphia,United States,US,39.8719,-75.2411
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+yhz,YHZ,Halifax,Canada,CA,44.8808,-63.5086
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+ktm,KTM,Kathmandu,Nepal,NP,27.6966,85.3591
+cpt,CPT,Cape Town,South Africa,ZA,-33.9648,18.6017
+got,GOT,Gothenborg,Sweden,SE,57.6628,12.2798
+dar,DAR,Dar Es Salaam,Tanzania,TZ,-6.87811,39.2026
+bog,BOG,Bogota,Colombia,CO,4.70159,-74.1469
+gru,GRU,Sao Paulo,Brazil,BR,-23.4322,-46.4692
+dur,DUR,Durban,South Africa,ZA,-29.6144,31.1197
+skp,SKP,Skopje,Macedonia,,41.9616,21.6214
+ktm,KTM,Kathmandu,Nepal,NP,27.6966,85.3591
+kiv,KIV,Chisinau,Moldova,MD,,
+dkr,DKR,Dakar,Senegal,SN,14.7397,-17.4902
+nqn,NQN,Neuquen,Argentina,AR,-38.949,-68.1557
+ccu,CCU,Kolkata,India,IN,22.6547,88.4467
+jnb,JNB,Johannesburg,South Africa,ZA,-26.1392,28.246
+hfa,HFA,Haifa,Israel,IL,32.8094,35.0431
+beg,BEG,Belgrade,Serbia,RS,44.8184,20.3091
+sof,SOF,Sofia,Bulgaria,BG,42.6967,23.4114
+tun,TUN,Tunis,Tunisia,TN,36.8511,10.2272
+dxb,DXB,Dubai,United Arab Emirates,AE,25.2528,55.3644
+bts,BTS,Bratislava,Slovakia,SK,48.1702,17.2127
+alg,ALG,Algier,Algeria,DZ,36.691,3.21541
+orn,ORN,Oran,Algeria,DZ,35.6239,-0.621183
+mex,MEX,Mexico City,Mexico,MX,19.4363,-99.0721
+qro,QRO,Queretaro,Mexico,MX,20.6173,-100.186
+gyd,GYD,Baku,Azerbaijan,AZ,40.4675,50.0467
+jog,JOG,Yogyakarta,Indonesia,ID,-7.78818,110.432
+mle,MLE,Male,Maldives,MV,4.19183,73.5291
+mle,MLE,Male,Maldives,MV,4.19183,73.5291
+yyc,YYC,Calgary,Canada,CA,51.1139,-114.02
+isb,ISB,Islamabad,Pakistan,PK,33.5607,72.8516
+scl,SCL,Santiago,Chile,CL,-33.3928,-70.7856
+scl,SCL,Santiago,Chile,CL,-33.3928,-70.7856
+khh,KHH,Kaohsiung,Taiwan,TW,22.5771,120.35
+abq,ABQ,Albuquerque,United States,US,35.0402,-106.609
+jib,JIB,Djibouti,Djibouti,DJ,11.5473,43.1595
+dar,DAR,Dar Es Salaam,Tanzania,TZ,-6.87811,39.2026
+jdo,JDO,Juazeiro Do Norte,Brazil,BR,-7.21896,-39.2701
+llk,LLK,Lankaran,Azerbaijan,AZ,38.7464,48.818
+bey,BEY,Beirut,Lebanon,LB,33.8209,35.4884
+jax,JAX,Jacksonville,United States,US,30.4941,-81.6879
+uio,UIO,Quito,Ecuador,EC,-0.129167,-78.3575
+alg,ALG,Algier,Algeria,DZ,36.691,3.21541
+str,STR,Stuttgart,Germany,DE,48.6899,9.22196
+bel,BEL,Belem,Brazil,BR,-1.37925,-48.4763
+amd,AMD,Ahmedabad,India,IN,23.0772,72.6347
+cnf,CNF,Belo Horizonte,Brazil,BR,-19.6336,-43.9686
+sjp,SJP,Sao Jose Do Rio Preto,Brazil,BR,-20.8166,-49.4065
+mem,MEM,Memphis,United States,US,35.0424,-89.9767
+eze,EZE,Buenos Aires,Argentina,AR,-34.8222,-58.5358
+lad,LAD,Luanda,Angola,AO,-8.85837,13.2312
+uln,ULN,Ulan Bator,Mongolia,MN,47.8431,106.767
+tlv,TLV,Tel-aviv,Israel,IL,32.0114,34.8867
+blr,BLR,Bangalore,India,IN,13.1979,77.7063
+jed,JED,Jeddah,Saudi Arabia,SA,21.6796,39.1565
+kiv,KIV,Chisinau,Moldova,MD,,
+skg,SKG,Thessaloniki,Greece,GR,40.5197,22.9709
+kef,KEF,Keflavik,Iceland,IS,63.985,-22.6056
+cbr,CBR,Canberra,Australia,AU,-35.3069,149.195
+hba,HBA,Hobart,Australia,AU,-42.8361,147.51
+gnd,GND,Point Salines,Grenada,GD,12.0042,-61.7862
+bkk,BKK,Bangkok,Thailand,TH,13.6811,100.747
+sti,STI,Santiago,Dominican Republic,DO,19.4061,-70.6047
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+vix,VIX,Vitoria,Brazil,BR,-20.2581,-40.2864
+ask,ASK,Yamoussoukro,Cote d'Ivoire,,6.90317,-5.36558
+doh,DOH,Doha,Qatar,QA,25.2731,51.6081
+ktm,KTM,Kathmandu,Nepal,NP,27.6966,85.3591
+nvt,NVT,Navegantes,Brazil,BR,-26.88,-48.6514
+hyd,HYD,Hyderabad,India,IN,17.2313,78.4299
+ist,IST,Istanbul,Turkey,,41.2753,28.7519
+for,FOR,Fortaleza,Brazil,BR,-3.77628,-38.5326
+ruh,RUH,Riyadh,Saudi Arabia,SA,24.9576,46.6988
+mnl,MNL,Manila,Philippines,PH,14.5086,121.02
+phx,PHX,Phoenix,United States,US,33.4343,-112.012
+kbp,KBP,Kiev,Ukraine,UA,50.345,30.8947
+gua,GUA,Guatemala City,Guatemala,GT,14.5817,-90.5267
+tpe,TPE,Taipei,Taiwan,TW,25.0777,121.233
+kja,KJA,Krasnoyarsk,Russia,,56.1729,92.4933
+tia,TIA,Tirana,Albania,AL,41.4147,19.7206
+okc,OKC,Oklahoma City,United States,US,35.3931,-97.6007
+bgi,BGI,Bridgetown,Barbados,BB,13.0746,-59.4925
+amm,AMM,Amman,Jordan,JO,31.7226,35.9932
+amm,AMM,Amman,Jordan,JO,31.7226,35.9932
+scl,SCL,Santiago,Chile,CL,-33.3928,-70.7856
+dps,DPS,Denpasar,Indonesia,ID,-8.74817,115.167
+cwb,CWB,Curitiba,Brazil,BR,-25.5285,-49.1758
+dxb,DXB,Dubai,United Arab Emirates,AE,25.2528,55.3644
+mct,MCT,Muscat,Oman,OM,23.5933,58.2844
+mde,MDE,Rio Negro,Colombia,CO,6.16454,-75.4231
+tbs,TBS,Tbilisi,Georgia,GE,41.6692,44.9547
+bah,BAH,Bahrain,Bahrain,BH,26.2708,50.6336
+cnf,CNF,Belo Horizonte,Brazil,BR,-19.6336,-43.9686
+ind,IND,Indianapolis,United States,US,39.7173,-86.2944
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+bgw,BGW,Baghdad,Iraq,IQ,33.2625,44.2346
+bsr,BSR,Basrah,Iraq,IQ,30.5491,47.6621
+ppt,PPT,Papeete,French Polynesia,PF,-17.5537,-149.607
+rec,REC,Recife,Brazil,BR,-8.12649,-34.9236
+cnf,CNF,Belo Horizonte,Brazil,BR,-19.6336,-43.9686
+ruh,RUH,Riyadh,Saudi Arabia,SA,24.9576,46.6988
+oua,OUA,Ouagadougou,Burkina Faso,BF,12.3532,-1.51242
+bgw,BGW,Baghdad,Iraq,IQ,33.2625,44.2346
+vte,VTE,Vientiane,Laos,LA,17.9883,102.563
+oka,OKA,Okinawa,Japan,JP,26.1958,127.646
+bah,BAH,Bahrain,Bahrain,BH,26.2708,50.6336
+sjk,SJK,Sao Jose Dos Campos,Brazil,BR,-23.2292,-45.8615
+poa,POA,Porto Alegre,Brazil,BR,-29.9944,-51.1714
+maa,MAA,Madras,India,IN,12.99,80.1693
+dar,DAR,Dar Es Salaam,Tanzania,TZ,-6.87811,39.2026
+rdu,RDU,Raleigh-durham,United States,US,35.8776,-78.7875
+bkk,BKK,Bangkok,Thailand,TH,13.6811,100.747
+run,RUN,St.-denis,Reunion,,-20.8871,55.5103
+lpb,LPB,La Paz,Bolivia,BO,-16.5133,-68.1923
+ebb,EBB,Entebbe,Uganda,UG,0.042386,32.4435
+cok,COK,Kochi,India,IN,10.152,76.4019
+cnn,CNN,Kannur,India,IN,11.9186,75.5472
+vcp,VCP,Campinas,Brazil,BR,-23.0081,-47.1344
+fsd,FSD,Sioux Falls,United States,US,43.582,-96.7419
+suv,SUV,Nausori,Fiji,FJ,-18.0433,178.559
+gru,GRU,Sao Paulo,Brazil,BR,-23.4322,-46.4692
+jnb,JNB,Johannesburg,South Africa,ZA,-26.1392,28.246
+uln,ULN,Ulan Bator,Mongolia,MN,47.8431,106.767
+pnh,PNH,Phnom-penh,Cambodia,KH,11.5466,104.844
+evn,EVN,Yerevan,Armenia,AM,40.1473,44.3959
+poa,POA,Porto Alegre,Brazil,BR,-29.9944,-51.1714
+mru,MRU,Plaisance,Mauritius,MU,-20.4302,57.6836
+tlh,TLH,Tallahassee,United States,US,30.3965,-84.3503
+phl,PHL,Philadelphia,United States,US,39.8719,-75.2411
+amm,AMM,Amman,Jordan,JO,31.7226,35.9932
+ktm,KTM,Kathmandu,Nepal,NP,27.6966,85.3591
+add,ADD,Addis Ababa,Ethiopia,ET,8.97778,38.7994
+mru,MRU,Plaisance,Mauritius,MU,-20.4302,57.6836
+sod,SOD,Sorocaba,Brazil,BR,-23.478,-47.49
+cmb,CMB,Colombo,Sri Lanka,LK,7.18076,79.8841
+sgn,SGN,Ho Chi Minh City,Vietnam,VN,10.8188,106.652
+han,HAN,Hanoi,Vietnam,VN,21.2212,105.807
+abj,ABJ,Abidjan,Cote d'Ivoire,,5.26139,-3.92629
+blr,BLR,Bangalore,India,IN,13.1979,77.7063
+cnf,CNF,Belo Horizonte,Brazil,BR,-19.6336,-43.9686
+kwi,KWI,Kuwait,Kuwait,KW,29.2266,47.9689
+ork,ORK,Cork,Ireland,IE,51.8413,-8.49111
+joi,JOI,Joinville,Brazil,BR,-26.2245,-48.7974
+gye,GYE,Guayaquil,Ecuador,EC,-2.15742,-79.8836
+rao,RAO,Ribeirao Preto,Brazil,BR,-21.1364,-47.7767
+tnr,TNR,Antananarivo,Madagascar,MG,-18.7969,47.4788
+san,SAN,San Diego,United States,US,32.7336,-117.19
+nbo,NBO,Nairobi,Kenya,KE,-1.31924,36.9278
+cpt,CPT,Cape Town,South Africa,ZA,-33.9648,18.6017
+ktm,KTM,Kathmandu,Nepal,NP,27.6966,85.3591
+lis,LIS,Lisbon,Portugal,PT,38.7813,-9.13592
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+kwi,KWI,Kuwait,Kuwait,KW,29.2266,47.9689
+udi,UDI,Uberlandia,Brazil,BR,-18.8836,-48.2253
+mao,MAO,Manaus,Brazil,BR,-3.03861,-60.0497
+lim,LIM,Lima,Peru,PE,-12.0219,-77.1143
+pbh,PBH,Thimphu,Bhutan,BT,27.4032,89.4246
+kul,KUL,Kuala Lumpur,Malaysia,MY,2.74558,101.71
+bod,BOD,Bordeaux,France,FR,44.8283,-0.715556
+doh,DOH,Doha,Qatar,QA,25.2731,51.6081
+sdq,SDQ,Santo Domingo,Dominican Republic,DO,18.4297,-69.6689
+cai,CAI,Cairo,Egypt,EG,30.1219,31.4056
+gua,GUA,Guatemala City,Guatemala,GT,14.5817,-90.5267
+nou,NOU,Noumea,New Caledonia,NC,-22.0146,166.213
+amm,AMM,Amman,Jordan,JO,31.7226,35.9932
+ccu,CCU,Kolkata,India,IN,22.6547,88.4467
+jhb,JHB,Johor Bahru,Malaysia,MY,1.64131,103.67
+khh,KHH,Kaohsiung,Taiwan,TW,22.5771,120.35
+mfm,MFM,Macau,Macau,,22.1496,113.592
+gyd,GYD,Baku,Azerbaijan,AZ,40.4675,50.0467
+kgl,KGL,Kigali,Rwanda,RW,-1.96863,30.1395
+gyn,GYN,Goiania,Brazil,BR,-16.632,-49.2207
+cgy,CGY,Cagayan de Oro City,Philippines,PH,8.6122,124.456
+clo,CLO,Cali,Colombia,CO,3.54322,-76.3816
+acc,ACC,Accra,Ghana,GH,5.60519,-0.166786
+khi,KHI,Karachi,Pakistan,PK,24.9065,67.1608
+tun,TUN,Tunis,Tunisia,TN,36.8511,10.2272
+sjo,SJO,San Jose,Costa Rica,CR,9.99386,-84.2088
+jed,JED,Jeddah,Saudi Arabia,SA,21.6796,39.1565
+bsb,BSB,Brasilia,Brazil,BR,-15.8692,-47.9208
+bgw,BGW,Baghdad,Iraq,IQ,33.2625,44.2346
+fln,FLN,Florianopolis,Brazil,BR,-27.6703,-48.5525
+sat,SAT,San Antonio,United States,US,29.5337,-98.4698
+kul,KUL,Kuala Lumpur,Malaysia,MY,2.74558,101.71
+pty,PTY,Panama City,Panama,PA,9.07136,-79.3835
+urt,URT,Surat Thani,Thailand,TH,9.1326,99.1356
+mde,MDE,Rio Negro,Colombia,CO,6.16454,-75.4231
+kul,KUL,Kuala Lumpur,Malaysia,MY,2.74558,101.71
+gdl,GDL,Guadalajara,Mexico,MX,20.5218,-103.311
+dac,DAC,Dhaka,Bangladesh,BD,23.8433,90.3978
+aus,AUS,Austin,United States,US,30.1945,-97.6699
+nbo,NBO,Nairobi,Kenya,KE,-1.31924,36.9278
+sfo,SFO,San Francisco,United States,US,37.619,-122.375
+orn,ORN,Oran,Algeria,DZ,35.6239,-0.621183
+hkg,HKG,Hong Kong,Hong Kong,HK,22.3089,113.915
+pos,POS,Port-of-spain,Trinidad and Tobago,TT,10.5954,-61.3372
+bgw,BGW,Baghdad,Iraq,IQ,33.2625,44.2346
+yow,YOW,Ottawa,Canada,CA,45.3225,-75.6692
+ala,ALA,Alma-ata,Kazakhstan,KZ,43.3521,77.0405
+chc,CHC,Christchurch,New Zealand,NZ,-43.4894,172.532
+for,FOR,Fortaleza,Brazil,BR,-3.77628,-38.5326
+uio,UIO,Quito,Ecuador,EC,-0.129167,-78.3575
+hyd,HYD,Hyderabad,India,IN,17.2313,78.4299
+jnb,JNB,Johannesburg,South Africa,ZA,-26.1392,28.246
+yhz,YHZ,Halifax,Canada,CA,44.8808,-63.5086
+dad,DAD,Danang,Vietnam,VN,16.0439,108.199
+gig,GIG,Rio De Janeiro,Brazil,BR,-22.81,-43.2506
+cmb,CMB,Colombo,Sri Lanka,LK,7.18076,79.8841
+dxb,DXB,Dubai,United Arab Emirates,AE,25.2528,55.3644
+geo,GEO,Georgetown,Guyana,GY,6.49855,-58.2541
+bgr,BGR,Bangor,United States,US,44.8074,-68.8281
+mnl,MNL,Manila,Philippines,PH,14.5086,121.02
+sgn,SGN,Ho Chi Minh City,Vietnam,VN,10.8188,106.652
+bnu,BNU,BLUMENAU,Brazil,BR,-26.8306,-49.0903
+lim,LIM,Lima,Peru,PE,-12.0219,-77.1143
+bwn,BWN,Bandar Seri Begawan,Brunei,,4.9442,114.928
+edi,EDI,Edinburgh,United Kingdom,GB,55.95,-3.3725
+bgw,BGW,Baghdad,Iraq,IQ,33.2625,44.2346
+ktm,KTM,Kathmandu,Nepal,NP,27.6966,85.3591
+gua,GUA,Guatemala City,Guatemala,GT,14.5817,-90.5267
+dmm,DMM,Dammam,Saudi Arabia,SA,26.4712,49.7979
+bog,BOG,Bogota,Colombia,CO,4.70159,-74.1469
+mnl,MNL,Manila,Philippines,PH,14.5086,121.02
+cle,CLE,Cleveland,United States,US,41.4117,-81.8498
+ktm,KTM,Kathmandu,Nepal,NP,27.6966,85.3591
+jed,JED,Jeddah,Saudi Arabia,SA,21.6796,39.1565
+baq,BAQ,Barranquilla,Colombia,CO,10.8896,-74.7808
+lca,LCA,Larnaca,Cyprus,CY,34.8751,33.6249
+bel,BEL,Belem,Brazil,BR,-1.37925,-48.4763
+aae,AAE,Annaba,Algeria,DZ,36.8222,7.80917
+nbo,NBO,Nairobi,Kenya,KE,-1.31924,36.9278
+hkg,HKG,Hong Kong,Hong Kong,HK,22.3089,113.915
+eze,EZE,Buenos Aires,Argentina,AR,-34.8222,-58.5358
+cnx,CNX,Chiang Mai,Thailand,TH,18.7668,98.9626
+pat,PAT,Patina,India,IN,25.5913,85.088
+pbm,PBM,Zandery,Suriname,SR,5.45283,-55.1878
+cmb,CMB,Colombo,Sri Lanka,LK,7.18076,79.8841
+msq,MSQ,Minsk 2,Belarus,BY,53.8825,28.0307
+cgk,CGK,Jakarta,Indonesia,ID,-6.12556,106.656
+ixc,IXC,Chandigarh,India,IN,30.6735,76.7885
+amd,AMD,Ahmedabad,India,IN,23.0772,72.6347
+del,DEL,Delhi,India,IN,28.5665,77.1031
+ssa,SSA,Salvador,Brazil,BR,-12.9086,-38.3225
+blr,BLR,Bangalore,India,IN,13.1979,77.7063
+adb,ADB,Izmir,Turkey,,38.2916,27.1487
+mnl,MNL,Manila,Philippines,PH,14.5086,121.02
+nag,NAG,Nagpur,India,IN,21.0922,79.0472
+crk,CRK,Angeles City,Philippines,PH,15.186,120.56
+pmo,PMO,Palermo,Italy,IT,38.176,13.091
+rao,RAO,Ribeirao Preto,Brazil,BR,-21.1364,-47.7767
+wdh,WDH,Windhoek,Namibia,,-22.4799,17.4709
+del,DEL,Delhi,India,IN,28.5665,77.1031
+dmm,DMM,Dammam,Saudi Arabia,SA,26.4712,49.7979
+cgk,CGK,Jakarta,Indonesia,ID,-6.12556,106.656
+kwi,KWI,Kuwait,Kuwait,KW,29.2266,47.9689
+kch,KCH,Kuching,Malaysia,MY,1.4847,110.347
+kin,KIN,Kingston,Jamaica,JM,17.9357,-76.7875
+hyd,HYD,Hyderabad,India,IN,17.2313,78.4299
+cnf,CNF,Belo Horizonte,Brazil,BR,-19.6336,-43.9686
+bom,BOM,Mumbai,India,IN,19.0887,72.8679
+knu,KNU,Kanpur,India,IN,26.4043,80.4101
+aus,AUS,Austin,United States,US,30.1945,-97.6699
+kwi,KWI,Kuwait,Kuwait,KW,29.2266,47.9689
+uln,ULN,Ulan Bator,Mongolia,MN,47.8431,106.767
+njf,NJF,Najaf,Iraq,IQ,31.9899,44.4043

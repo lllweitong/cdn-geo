@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>POPs + IP Bubbles (Static)</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; background: #fff; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 12px; }
+    .controls { display: grid; grid-template-columns: 1.2fr 1.2fr 1fr 1fr 1fr; gap: 10px; align-items: center; }
+    .controls > div { min-width: 0; }
+    select, button { width: 100%; padding: 8px; }
+    label { display: inline-flex; gap: 6px; align-items: center; margin-right: 10px; white-space: nowrap; }
+    #stats { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; padding: 8px 0; }
+    #map { height: 78vh; }
+    .hint { color: #555; font-size: 13px; padding-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h3>POPs + IP Bubbles (Static GitHub Pages)</h3>
+
+    <div class="controls">
+      <div>
+        <div><b>POP (select 1)</b></div>
+        <select id="popSelect"></select>
+      </div>
+
+      <div>
+        <div><b>Country (select 1)</b></div>
+        <select id="countrySelect"></select>
+      </div>
+
+      <div>
+        <div><b>Latency</b></div>
+        <div>
+          <label><input type="checkbox" id="latNeg" checked> -1</label>
+          <label><input type="checkbox" id="latPos" checked> +1</label>
+        </div>
+      </div>
+
+      <div>
+        <div><b>POPs</b></div>
+        <div>
+          <label><input type="checkbox" id="showOtherPops" checked> Show other POPs</label>
+        </div>
+      </div>
+
+      <div>
+        <div><b>best_pop</b></div>
+        <div>
+          <label><input type="checkbox" id="showBestPops" checked> Show related best_pop POPs</label>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:10px; margin-top:10px;">
+      <button id="resetBtn" style="max-width:260px;">Reset to POP = hkg</button>
+      <div class="hint">
+        IPs are shown only when exactly one POP or one country is selected.
+      </div>
+    </div>
+
+    <div id="stats"></div>
+    <div id="map"></div>
+  </div>
+
+<script>
+  const DEFAULT_POP = "hkg"; // change to "HKG" if needed
+
+  // --- Make IP markers more visible even when count=1 ---
+  const IP_MIN_SIZE_PX = 8;      // minimum marker diameter-ish (visual)
+  const IP_MAX_SIZE_PX = 34;     // cap the biggest bubble
+  const IP_SIZE_MODE = "sqrt";   // "sqrt" makes small counts more visible than area scaling
+
+  let POPS = [];   // rows: {pop,country,latitude,longitude}
+  let IPS  = [];   // rows: {count,country,pop,lat,lng,latency,best_pop}
+
+  function parseCSV(url) {
+    return new Promise((resolve, reject) => {
+      Papa.parse(url, {
+        download: true,
+        header: true,
+        dynamicTyping: true,
+        skipEmptyLines: true,
+        complete: (res) => resolve(res.data),
+        error: reject
+      });
+    });
+  }
+
+  function uniqSorted(arr) {
+    return Array.from(new Set(arr.filter(x => x !== null && x !== undefined && x !== ""))).sort();
+  }
+
+  function setSelectOptions(selectEl, values, placeholder) {
+    selectEl.innerHTML = "";
+    const opt0 = document.createElement("option");
+    opt0.value = "";
+    opt0.textContent = placeholder;
+    selectEl.appendChild(opt0);
+
+    for (const v of values) {
+      const opt = document.createElement("option");
+      opt.value = v;
+      opt.textContent = v;
+      selectEl.appendChild(opt);
+    }
+  }
+
+  function onlyOneSelected(val) {
+    return val !== null && val !== undefined && val !== "";
+  }
+
+  function getLatencyAllowed() {
+    const allowed = [];
+    if (document.getElementById("latNeg").checked) allowed.push(-1);
+    if (document.getElementById("latPos").checked) allowed.push(1);
+    return allowed;
+  }
+
+  function computeIPShown(popVal, countryVal) {
+    const hasPop = onlyOneSelected(popVal);
+    const hasCountry = onlyOneSelected(countryVal);
+
+    if (!hasPop && !hasCountry) {
+      return { rows: [], message: "IP layer hidden: select exactly ONE POP or ONE country." };
+    }
+
+    let d = IPS.slice();
+    if (hasPop) d = d.filter(r => String(r.pop) === String(popVal));
+    if (hasCountry) d = d.filter(r => String(r.country) === String(countryVal));
+
+    const allowedLat = getLatencyAllowed();
+    if (allowedLat.length === 0) {
+      return { rows: [], message: "IP layer hidden: select at least one latency (-1 or +1)." };
+    }
+    d = d.filter(r => allowedLat.includes(Number(r.latency)));
+
+    return { rows: d, message: null };
+  }
+
+  function visiblePops(popVal, countryVal, shownIPs) {
+    const showOther = document.getElementById("showOtherPops").checked;
+    const showBest  = document.getElementById("showBestPops").checked;
+
+    if (showOther) return POPS;
+
+    const hasPop = onlyOneSelected(popVal);
+    const hasCountry = onlyOneSelected(countryVal);
+
+    const vis = new Set();
+
+    if (hasPop) {
+      vis.add(String(popVal));
+      if (showBest) for (const r of shownIPs) vis.add(String(r.best_pop));
+    } else if (hasCountry) {
+      for (const r of shownIPs) {
+        vis.add(String(r.pop));
+        vis.add(String(r.best_pop));
+      }
+    }
+
+    return POPS.filter(p => vis.has(String(p.pop)));
+  }
+
+  // --- IP sizing: make count=1 visible ---
+  function computeIPMarkerSizes(rows) {
+    if (rows.length === 0) return [];
+
+    const counts = rows.map(r => Math.max(1, Number(r.count) || 1));
+    const maxC = Math.max(...counts, 1);
+
+    // Map counts -> [minSize, maxSize] using sqrt scaling
+    return counts.map(c => {
+      const t = Math.sqrt(c) / Math.sqrt(maxC);         // 0..1
+      return IP_MIN_SIZE_PX + t * (IP_MAX_SIZE_PX - IP_MIN_SIZE_PX);
+    });
+  }
+
+  function makeTraces(popsRows, ipRows) {
+    const popTrace = {
+      type: "scattergeo",
+      mode: "markers+text",
+      name: "POPs",
+      lat: popsRows.map(r => Number(r.latitude)),
+      lon: popsRows.map(r => Number(r.longitude)),
+      text: popsRows.map(r => String(r.pop)),
+      textposition: "top center",
+      marker: { size: 10, color: "black" },
+      hovertemplate: "<b>%{text}</b><br>%{lat:.3f}, %{lon:.3f}<extra></extra>"
+    };
+
+    const ipNeg = ipRows.filter(r => Number(r.latency) === -1);
+    const ipPos = ipRows.filter(r => Number(r.latency) === 1);
+
+    const sizesNeg = computeIPMarkerSizes(ipNeg);
+    const sizesPos = computeIPMarkerSizes(ipPos);
+
+    const ipTraceNeg = {
+      type: "scattergeo",
+      mode: "markers",
+      name: "Latency -1",
+      lat: ipNeg.map(r => Number(r.lat)),
+      lon: ipNeg.map(r => Number(r.lng)),
+      marker: {
+        size: sizesNeg,      // <— explicit size, not area scaling
+        opacity: 0.75,
+        color: "red",
+        line: { width: 0.5, color: "black" } // outline makes single points pop
+      },
+      customdata: ipNeg.map(r => [r.count, r.pop, r.country, r.best_pop]),
+      hovertemplate:
+        "<b>Count:</b> %{customdata[0]}<br>" +
+        "<b>POP:</b> %{customdata[1]}<br>" +
+        "<b>Country:</b> %{customdata[2]}<br>" +
+        "<b>Best POP:</b> %{customdata[3]}<br>" +
+        "<b>Latency:</b> -1<br>" +
+        "%{lat:.3f}, %{lon:.3f}<extra></extra>"
+    };
+
+    const ipTracePos = {
+      type: "scattergeo",
+      mode: "markers",
+      name: "Latency +1",
+      lat: ipPos.map(r => Number(r.lat)),
+      lon: ipPos.map(r => Number(r.lng)),
+      marker: {
+        size: sizesPos,
+        opacity: 0.75,
+        color: "green",
+        line: { width: 0.5, color: "black" }
+      },
+      customdata: ipPos.map(r => [r.count, r.pop, r.country, r.best_pop]),
+      hovertemplate:
+        "<b>Count:</b> %{customdata[0]}<br>" +
+        "<b>POP:</b> %{customdata[1]}<br>" +
+        "<b>Country:</b> %{customdata[2]}<br>" +
+        "<b>Best POP:</b> %{customdata[3]}<br>" +
+        "<b>Latency:</b> +1<br>" +
+        "%{lat:.3f}, %{lon:.3f}<extra></extra>"
+    };
+
+    const traces = [popTrace];
+    if (ipNeg.length) traces.push(ipTraceNeg);
+    if (ipPos.length) traces.push(ipTracePos);
+    return traces;
+  }
+
+  function render() {
+    const popVal = document.getElementById("popSelect").value;
+    const countryVal = document.getElementById("countrySelect").value;
+
+    const { rows: shownIPs, message } = computeIPShown(popVal, countryVal);
+    const visPops = visiblePops(popVal, countryVal, shownIPs);
+
+    const traces = makeTraces(visPops, message ? [] : shownIPs);
+
+    const layout = {
+      geo: {
+        projection: { type: "natural earth" },
+
+        // (1) White map + only borders
+        bgcolor: "white",
+        showland: false,
+        showocean: false,
+        showlakes: false,
+        showrivers: false,
+
+        showcountries: true,
+        countrycolor: "black",
+        countrywidth: 0.6,
+
+        showcoastlines: false,
+        showframe: false
+      },
+      paper_bgcolor: "white",
+      plot_bgcolor: "white",
+      legend: { orientation: "h" },
+      margin: { l: 0, r: 0, t: 0, b: 0 }
+    };
+
+    Plotly.react("map", traces, layout, {responsive: true});
+
+    const totalCount = shownIPs.reduce((s, r) => s + (Number(r.count) || 0), 0);
+    const bestPopsInvolved = new Set(shownIPs.map(r => String(r.best_pop))).size;
+
+    const stats = message
+      ? `POPs shown: ${visPops.length} | ${message}`
+      : `POPs shown: ${visPops.length} | IP locations shown: ${shownIPs.length} | Total count shown: ${totalCount} | Best POPs involved: ${bestPopsInvolved}`;
+
+    document.getElementById("stats").textContent = stats;
+  }
+
+  async function main() {
+    POPS = await parseCSV("pop.csv");
+    IPS  = await parseCSV("ip.csv");
+
+    POPS = POPS
+      .map(r => ({
+        pop: r.pop,
+        country: r.country,
+        latitude: Number(r.latitude),
+        longitude: Number(r.longitude ?? r.lonitude)
+      }))
+      .filter(r => r.pop && Number.isFinite(r.latitude) && Number.isFinite(r.longitude));
+
+    IPS = IPS
+      .map(r => ({
+        count: Number(r.count),
+        country: r.country,
+        pop: r.pop,
+        lat: Number(r.lat),
+        lng: Number(r.lng),
+        latency: Number(r.latency),
+        best_pop: r.best_pop
+      }))
+      .filter(r =>
+        r.pop && r.country && r.best_pop &&
+        Number.isFinite(r.lat) && Number.isFinite(r.lng) &&
+        Number.isFinite(r.count) && r.count > 0 &&
+        (r.latency === -1 || r.latency === 1)
+      );
+
+    const popVals = uniqSorted(IPS.map(r => String(r.pop)));
+    const countryVals = uniqSorted(IPS.map(r => String(r.country)));
+
+    const popSelect = document.getElementById("popSelect");
+    const countrySelect = document.getElementById("countrySelect");
+
+    setSelectOptions(popSelect, popVals, "(none)");
+    setSelectOptions(countrySelect, countryVals, "(none)");
+
+    const defaultPop = popVals.includes(DEFAULT_POP) ? DEFAULT_POP : (popVals[0] || "");
+    popSelect.value = defaultPop;
+    countrySelect.value = "";
+
+    popSelect.addEventListener("change", () => {
+      if (onlyOneSelected(popSelect.value)) countrySelect.value = "";
+      render();
+    });
+    countrySelect.addEventListener("change", () => {
+      if (onlyOneSelected(countrySelect.value)) popSelect.value = "";
+      render();
+    });
+
+    ["latNeg", "latPos", "showOtherPops", "showBestPops"].forEach(id => {
+      document.getElementById(id).addEventListener("change", render);
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      popSelect.value = defaultPop;
+      countrySelect.value = "";
+      document.getElementById("latNeg").checked = true;
+      document.getElementById("latPos").checked = true;
+      document.getElementById("showOtherPops").checked = true;
+      document.getElementById("showBestPops").checked = true;
+      render();
+    });
+
+    render();
+  }
+
+  main().catch(err => {
+    console.error(err);
+    document.getElementById("stats").textContent = "Failed to load CSVs. Check filenames and GitHub Pages path.";
+  });
+</script>
+</body>
+</html>
