@@ -3,22 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Internal Use Only!</title>
+  <title>POPs + IP Bubbles (Static)</title>
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; background: #fff; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; background:#fff; }
     .wrap { max-width: 1200px; margin: 0 auto; padding: 12px; }
     .controls { display: grid; grid-template-columns: 1.2fr 1.2fr 1fr 1fr 1fr; gap: 10px; align-items: center; }
     .controls > div { min-width: 0; }
-    select, button { width: 100%; padding: 8px; }
+    select, button, input { width: 100%; padding: 8px; box-sizing: border-box; }
     label { display: inline-flex; gap: 6px; align-items: center; margin-right: 10px; white-space: nowrap; }
     #stats { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; padding: 8px 0; }
     #map { height: 78vh; }
     .hint { color: #555; font-size: 13px; padding-top: 6px; }
+    .lockCard { max-width: 380px; width: 100%; padding: 18px; border: 1px solid #ccc; border-radius: 10px; }
+    .row { display:flex; gap:10px; }
+    .muted { color:#666; font-size: 13px; }
   </style>
 </head>
+
 <body>
+
+<!-- =======================
+     Password Gate (Option A)
+     ======================= -->
+<div id="lockScreen" style="height:100vh;display:flex;align-items:center;justify-content:center;padding:16px;">
+  <div class="lockCard">
+    <h3 style="margin:0 0 10px 0;">Protected Page</h3>
+    <div class="muted" style="margin-bottom:10px;">
+      Enter password to view the dashboard.
+    </div>
+    <input id="pwd" type="password" placeholder="Password" autocomplete="current-password" />
+    <div class="row" style="margin-top:10px;">
+      <button id="enterBtn" onclick="unlock()">Enter</button>
+    </div>
+    <div id="err" style="color:#b00020;margin-top:10px;"></div>
+  </div>
+</div>
+
+<!-- Your app (hidden until unlocked) -->
+<div id="app" style="display:none;">
   <div class="wrap">
     <h3>POPs + IP Bubbles (Static GitHub Pages)</h3>
 
@@ -66,17 +90,60 @@
     <div id="stats"></div>
     <div id="map"></div>
   </div>
+</div>
 
 <script>
+  // =========================
+  // Password Gate Config
+  // =========================
+  // Put SHA-1(password) here (hex).
+  // Generate:
+  //   openssl rand -base64 12
+  //   echo -n "PASSWORD" | shasum
+  const PASSWORD_HASH = "f39123746641af29df061398848d7f2559b76385"; // <-- replace
+
+  async function sha1(str) {
+    const buf = new TextEncoder().encode(str);
+    const hash = await crypto.subtle.digest("SHA-1", buf);
+    return Array.from(new Uint8Array(hash))
+      .map(b => b.toString(16).padStart(2, "0"))
+      .join("");
+  }
+
+  async function unlock() {
+    const errEl = document.getElementById("err");
+    errEl.textContent = "";
+
+    const pwd = document.getElementById("pwd").value || "";
+    const h = await sha1(pwd);
+
+    if (h === PASSWORD_HASH) {
+      document.getElementById("lockScreen").style.display = "none";
+      document.getElementById("app").style.display = "block";
+      main(); // start app only after unlock
+    } else {
+      errEl.textContent = "Wrong password";
+    }
+  }
+
+  // Enter key submits
+  document.addEventListener("keydown", (e) => {
+    if (document.getElementById("lockScreen").style.display !== "none" && e.key === "Enter") {
+      unlock();
+    }
+  });
+
+  // =========================
+  // App (static Plotly + CSV)
+  // =========================
   const DEFAULT_POP = "hkg"; // change to "HKG" if needed
 
-  // --- Make IP markers more visible even when count=1 ---
-  const IP_MIN_SIZE_PX = 8;      // minimum marker diameter-ish (visual)
-  const IP_MAX_SIZE_PX = 34;     // cap the biggest bubble
-  const IP_SIZE_MODE = "sqrt";   // "sqrt" makes small counts more visible than area scaling
+  // IP marker visibility even for count=1
+  const IP_MIN_SIZE_PX = 8;
+  const IP_MAX_SIZE_PX = 34;
 
-  let POPS = [];   // rows: {pop,country,latitude,longitude}
-  let IPS  = [];   // rows: {count,country,pop,lat,lng,latency,best_pop}
+  let POPS = [];
+  let IPS  = [];
 
   function parseCSV(url) {
     return new Promise((resolve, reject) => {
@@ -166,16 +233,12 @@
     return POPS.filter(p => vis.has(String(p.pop)));
   }
 
-  // --- IP sizing: make count=1 visible ---
   function computeIPMarkerSizes(rows) {
     if (rows.length === 0) return [];
-
     const counts = rows.map(r => Math.max(1, Number(r.count) || 1));
     const maxC = Math.max(...counts, 1);
-
-    // Map counts -> [minSize, maxSize] using sqrt scaling
     return counts.map(c => {
-      const t = Math.sqrt(c) / Math.sqrt(maxC);         // 0..1
+      const t = Math.sqrt(c) / Math.sqrt(maxC);
       return IP_MIN_SIZE_PX + t * (IP_MAX_SIZE_PX - IP_MIN_SIZE_PX);
     });
   }
@@ -205,12 +268,7 @@
       name: "Latency -1",
       lat: ipNeg.map(r => Number(r.lat)),
       lon: ipNeg.map(r => Number(r.lng)),
-      marker: {
-        size: sizesNeg,      // <— explicit size, not area scaling
-        opacity: 0.75,
-        color: "red",
-        line: { width: 0.5, color: "black" } // outline makes single points pop
-      },
+      marker: { size: sizesNeg, opacity: 0.75, color: "red", line: { width: 0.5, color: "black" } },
       customdata: ipNeg.map(r => [r.count, r.pop, r.country, r.best_pop]),
       hovertemplate:
         "<b>Count:</b> %{customdata[0]}<br>" +
@@ -227,12 +285,7 @@
       name: "Latency +1",
       lat: ipPos.map(r => Number(r.lat)),
       lon: ipPos.map(r => Number(r.lng)),
-      marker: {
-        size: sizesPos,
-        opacity: 0.75,
-        color: "green",
-        line: { width: 0.5, color: "black" }
-      },
+      marker: { size: sizesPos, opacity: 0.75, color: "green", line: { width: 0.5, color: "black" } },
       customdata: ipPos.map(r => [r.count, r.pop, r.country, r.best_pop]),
       hovertemplate:
         "<b>Count:</b> %{customdata[0]}<br>" +
@@ -262,7 +315,7 @@
       geo: {
         projection: { type: "natural earth" },
 
-        // (1) White map + only borders
+        // White map + only country borders
         bgcolor: "white",
         showland: false,
         showocean: false,
@@ -282,7 +335,7 @@
       margin: { l: 0, r: 0, t: 0, b: 0 }
     };
 
-    Plotly.react("map", traces, layout, {responsive: true});
+    Plotly.react("map", traces, layout, { responsive: true });
 
     const totalCount = shownIPs.reduce((s, r) => s + (Number(r.count) || 0), 0);
     const bestPopsInvolved = new Set(shownIPs.map(r => String(r.best_pop))).size;
@@ -362,11 +415,6 @@
 
     render();
   }
-
-  main().catch(err => {
-    console.error(err);
-    document.getElementById("stats").textContent = "Failed to load CSVs. Check filenames and GitHub Pages path.";
-  });
 </script>
 </body>
 </html>
